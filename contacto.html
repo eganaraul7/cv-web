@@ -7,17 +7,35 @@
   <h1>Contacto</h1>
   <p>¿Tienes alguna pregunta? <strong>¡Contáctame!</strong></p>
   <form action="/enviar" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre">
-    <br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email">
-    <br><br>
-    <label for="asunto">Asunto:</label>
-    <input type="text" id="asunto" name="asunto">
-    <br><br>
-    <label for="mensaje">Mensaje:</label>
-    <textarea id="mensaje" name="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..."></textarea>
-    <br><br>
-    <button type="submit">Enviar</button>
+    <fieldset>
+      <legend>Datos personales</legend>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" required minlength="3" placeholder="Ej: Raúl Egaña">
+      <br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Otros datos</legend>
+      <label for="motivo">¿Sobre que quieres contactarme?</label>
+      <select name="motivo" id="motivo" required>
+        <option value="">-- Seleccione un motivo --</option>
+        <optgroup label="Profesional">
+          <option value="trabajo">Oferta laboral</option>
+          <option value="proyecto">Colaboración en proyecto</option>
+        </optgroup>
+        <optgroup label="Personal">
+          <option value="consulta">Consulta general</option>
+          <option value="otro">Otro motivo</option>
+      </select>
+      <br><br>
+      <label for="asunto">Asunto:</label>
+      <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre tu portafolio" required minlength="5">
+      <br><br>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..." required minlength="10" maxlength="500"></textarea>
+    </fieldset>
+    <br>
+    <button type="submit">Enviar</button> <button type="reset">Limpiar</button>
   </form>

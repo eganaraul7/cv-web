@@ -25,11 +25,88 @@
 
   <title>Raúl Egaña - Desarrollador Full Stack | CV</title>
 
-  <favicon href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Skip link - invisible hasta que recibe focus */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #005fcc;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid #ffbf47;
+    }
+    
+    /* ✅ Focus visible para todos los elementos interactivos */
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid #005fcc;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    
+    /* ✅ Mejorar contraste de texto (asumiendo fondo blanco) */
+    body {
+      color: #1a1a1a; /* Casi negro - mejor contraste */
+      line-height: 1.5;
+    }
+    
+    /* ✅ Los enlaces deben tener buen contraste */
+    a {
+      color: #005fcc; /* Azul con buen contraste (cumple AAA) */
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    
+    a:hover {
+      color: #003d8c;
+    }
+    
+    /* ✅ Hacer que el focus en imágenes link sea visible */
+    a:focus-visible img {
+      outline: 3px solid #005fcc;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    /* ✅ Mejorar legibilidad de la tabla */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid #444;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    caption {
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    
+    /* ✅ Mensajes de estado (para el footer) */
+    [role="status"] {
+      padding: 8px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   <header>
-    <nav>
+    <nav aria-label="Menú principal">
       <ul>
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
@@ -37,23 +114,25 @@
         <li><a href="#educacion">Educación</a></li>
       </ul>
     </nav>
-    <a href="https://www.linkedin.com/in/raul-egana/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de LinkedIn"><img src="img/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt=""></a>
-    <a href="https://github.com/raulegana7" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de GitHub"><img src="img/github_logo_icon_229278.png" alt=""></a>
-    <a href="contacto.html" aria-label="Contactame"><img src="img/Google_Contacts_logo.png" alt=""></a>
-    <img src="https://lh3.googleusercontent.com/a/ACg8ocKXFgrxaEAFghJ_hb5OtcxeYJ_DR-HbODJYJRGWwAIdSGLKjJVAyg=s400-c" alt="Foto de perfil de Raúl Egaña" width="150" height="150">
+    <a href="https://www.linkedin.com/in/raul-egana/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de LinkedIn"><img src="img/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="" aria-hidden="true"></a>
+    <a href="https://github.com/raulegana7" target="_blank" rel="noopener noreferrer" aria-label="Visita mi perfil de GitHub"><img src="img/github_logo_icon_229278.png" alt="" aria-hidden="true"></a>
+    <a href="contacto.html" aria-label="Contactame"><img src="img/Google_Contacts_logo.png" alt="" aria-hidden="true"></a>
+    <img src="https://lh3.googleusercontent.com/a/ACg8ocKXFgrxaEAFghJ_hb5OtcxeYJ_DR-HbODJYJRGWwAIdSGLKjJVAyg=s400-c" alt="Foto de perfil de Raúl Egaña, desarrollador full stack" width="150" height="150">
       <h1>Raúl Egaña</h1>
         <p>Desarrollador web full stack con experiencia en diversas tecnologías modernas, amante de la programación y en busca de buenas oportunidades laborales.</p>
   </header>
   <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
+    <section id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+      <h2 id="sobre-mi-titulo">Sobre mí</h2>
         <p>Me llamo <strong>Raúl Egaña</strong>, soy un <em><b>desarrollador web full stack</b></em> con experiencia en tecnologías modernas como <mark>React</mark>, <mark>Node.js</mark> y <mark>Python</mark>.</p>
         <p>Me especializo en el <em><b>desarrollo de aplicaciones web completas</b></em>, desde el <strong>frontend</strong> hasta el <strong>backend</strong>, utilizando tecnologías como React, Node.js y Python. Mi objetivo es crear soluciones innovadoras y eficientes que mejoren la experiencia del usuario.</p>
         <p>Como dijo mi padre: <q><em>La programación es el arte de resolver problemas con código</em></q>.</p>
     </section>
-    <br>
-    <section id="habilidades">
-      <h2>Habilidades</h2>
+
+    <hr class="separator" aria-hidden="true">
+    
+    <section id="habilidades" aria-labelledby="habilidades-titulo">
+      <h2 id="habilidades-titulo">Habilidades</h2>
         <ul>
           <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React, TypeScript</li>
           <li><strong>Backend:</strong> Node.js, Express, Python, Django</li>
@@ -62,9 +141,9 @@
           <li><strong>Idiomas:</strong> Español (nativo), Inglés (avanzado)</li>
         </ul> 
     <br>
-        <h3>Mi Stack de Herramientas Tecnológicas</h3>
+        <h3 id="stack-titulo">Mi Stack de Herramientas Tecnológicas</h3>
           <p>A continuación les muestro mi stack de herramientas tecnológicas, el cual para ser exactos es el <strong>STACK MERN</strong>:</p>
-            <dl>
+            <dl aria-labelledby="stack-titulo">
               <dt><strong>Visual Studio Code</strong></dt>
               <dd><em>Mi editor de código principal donde gestiono mis proyectos y extensiones.</em></dd>
 
@@ -78,9 +157,11 @@
               <dd><em>Entorno de ejecución para JavaScript que me permite trabajar en el lado del servidor.</em></dd>
             </dl>
     </section>
-    <br>
-    <section id="proyectos">
-      <h2>Proyectos</h2>
+
+    <hr class="separator" aria-hidden="true">
+
+    <section id="proyectos" aria-labelledby="proyectos-titulo">
+      <h2 id="proyectos-titulo">Proyectos</h2>
         <p>A continuación se presentan algunos de mis proyectos más destacados:</p>
           <table> 
             <caption>Proyectos Destacados</caption>
@@ -119,18 +200,20 @@
             </tfoot>
           </table>
     </section>
-    <br>
-    <section id="educacion">
-    <h2>Educación</h2>
+
+    <hr class="separator" aria-hidden="true">
+
+    <section id="educacion" aria-labelledby="educacion-titulo">
+      <h2 id="educacion-titulo">Educación</h2>
       <ol>
         <li><a href="https://www.freecodecamp.org/learn/responsive-web-design-v9/#quiz-basic-html" target="_blank" rel="noopener noreferrer" title="Certificado de Diseño Web Responsivo">Certificado de Diseño Web Responsivo</a> - FreeCodeCamp (2026)</li>
         <li><strong>Ingeniera en Informática</strong> - Universidad Nacional Experimental de Guayana (2024-2030)</li>
       </ol>
     </section>
   </main>
-  <footer>
+  <footer role="contentinfo">
     <p>
-      <small>&copy; <time datatime="2026">2026</time> Raúl Egaña. Todos los derechos reservados.</small>
+      <small>&copy; <time datetime="2026">2026</time> Raúl Egaña. Todos los derechos reservados.</small>
     </p>
   </footer>
 </body>

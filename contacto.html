@@ -32,10 +32,10 @@
       <fieldset>
         <legend>Datos personales</legend>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" required minlength="3" placeholder="Ej: Raúl Egaña">
+        <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" required minlength="3" placeholder="Ej: Raúl Egaña" aria-required="true" aria-describedby="nombre-error">
         <br><br>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com" aria-required="true" aria-describedby="email-error">
       </fieldset>
       <br>
       <fieldset>
@@ -53,10 +53,10 @@
         </select>
         <br><br>
         <label for="asunto">Asunto:</label>
-        <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre tu portafolio" required minlength="5">
+        <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre tu portafolio" required minlength="5" maxlength="100" aria-required="true" aria-describedby="asunto-error">
         <br><br>
         <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..." required minlength="10" maxlength="500"></textarea>
+        <textarea id="mensaje" name="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..." required minlength="10" maxlength="500" aria-required="true" aria-describedby="mensaje-error"></textarea>
       </fieldset>
       <br>
       <button type="submit" aria-label="Enviar formulario">Enviar</button> <button type="reset" aria-label="Limpiar formulario">Limpiar</button>

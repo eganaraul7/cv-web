@@ -56,15 +56,20 @@ p {
     margin-bottom: 15px;
 }
 
+p::selection {
+    background-color: blue;
+    color: white;
+}
+
 /* Links */
 a {
     color: #2563eb;
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     text-decoration: underline;
-    color: #1e40af;
+    color: rgb(25, 25, 171);
 }
 
 /* Listas */
@@ -91,4 +96,51 @@ footer {
     padding: 20px;
     background-color: #e5e7eb;
     color: #6b7280;
+}
+
+/* ==========================================
+    SELECTORES AVANZADOS EN TU CV
+   ========================================== */
+
+/* Links en la nav */
+nav a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+/* Primer párrafo de cada sección */
+section p:first-child {
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+/* Hermano adyacente: p después de h2 */
+h2 + p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Items pares de lista */
+li:nth-child(even) {
+    background-color: #f9fafb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Links de proyectos con efecto */
+td a[target="_blank"]:after {
+    content: " 🔗";
+    font-size: 12px;
+}
+
+/* Input focus */
+input:focus {
+    border: 2px solid #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
 }

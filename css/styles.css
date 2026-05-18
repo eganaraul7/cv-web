@@ -1,16 +1,10 @@
-/* ==========================================
-   CV WEB - RAÚL EGAÑA
-   Hoja de estilos principal
-   ========================================== */
-
-/* Reset básico */
+/* Reset global */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos del body */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -21,55 +15,62 @@ body {
 /* Contenedor principal */
 main {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0 auto;          /* Centra horizontalmente */
+    padding: 40px 20px;      /* Espacio interno */
+    background-color: white;
+    border-radius: 8px;
 }
 
-/* Títulos principales */
-h1 {
-    color: #2563eb;
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Títulos de sección */
-h2 {
-    color: #1e40af;
-    font-size: 32px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 5px;
-}
-
-/* Subtítulos */
-h3 {
-    color: #1e3a8a;
-    font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Párrafos */
-p {
-    margin-bottom: 15px;
-}
-
-p::selection {
-    background-color: blue;
+/* Header */
+header {
+    background-color: #1f3b86;
     color: white;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0 0 10px 0;      /* Controla el espaciado */
+}
+
+header p {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Secciones */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 4px solid #2563eb;
+    background-color: #f9fafb;
+    border-radius: 4px;
+}
+
+section h2 {
+    margin-top: 0;           /* Quita el margen superior */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2563eb;
+    color: #1e40af;
 }
 
 /* Links */
 a {
     color: #2563eb;
     text-decoration: none;
+    padding: 5px 10px;       /* Dale padding a los links */
+    margin: 0 5px;           /* Espacio entre links */
+    border-radius: 3px;
+    transition: background-color 0.3s;
 }
 
-a:hover, a:focus {
+a:hover {
+    background-color: #dbeafe;
     text-decoration: underline;
-    color: rgb(25, 25, 171);
 }
 
 /* Listas */
@@ -79,68 +80,52 @@ ul, ol {
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    padding: 8px 0;
 }
 
-/* Resaltado con mark */
-mark {
-    background-color: #fef3c7;
-    padding: 2px 4px;
-    border-radius: 3px;
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    padding: 15px;           /* Espacio interno */
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+table tr:hover {
+    background-color: #dbeafe;
 }
 
 /* Footer */
 footer {
-    text-align: center;
     margin-top: 50px;
-    padding: 20px;
-    background-color: #e5e7eb;
-    color: #6b7280;
+    padding: 30px 20px;
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
 }
 
-/* ==========================================
-    SELECTORES AVANZADOS EN TU CV
-   ========================================== */
-
-/* Links en la nav */
-nav a {
-    color: #2563eb;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #1e40af;
-    text-decoration: underline;
-}
-
-/* Primer párrafo de cada sección */
-section p:first-child {
-    font-weight: bold;
-    color: #1e3a8a;
-}
-
-/* Hermano adyacente: p después de h2 */
-h2 + p {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* Items pares de lista */
-li:nth-child(even) {
-    background-color: #f9fafb;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Links de proyectos con efecto */
-td a[target="_blank"]:after {
-    content: " 🔗";
-    font-size: 12px;
-}
-
-/* Input focus */
-input:focus {
-    border: 2px solid #2563eb;
-    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+/* hr */
+hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 1px solid #ddd;
 }
